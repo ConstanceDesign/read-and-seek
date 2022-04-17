@@ -3,7 +3,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
 const path = require("path");
-const routes = require("./routes");
+// const routes = require("./routes");
 
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require("./schemas");
@@ -36,7 +36,7 @@ startServer();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(routes);
+// app.use(routes);
 
 db.once("open", () => {
   app.listen(PORT, () => {
