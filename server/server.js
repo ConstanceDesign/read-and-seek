@@ -9,18 +9,21 @@ const db = require("./config/connection");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
+
 const startServer = async () => {
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    context: authMiddleware,
+  db.once("open", () => {
+    app.listen(PORT, () => {
+      console.log(`🌍 Now listening on localhost:${PORT}!`);
+    });
   });
   await server.start();
   server.applyMiddleware({ app });
-  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
-
-startServer();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,8 +37,4 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
-db.once("open", () => {
-  app.listen(PORT, () => {
-    console.log(`🌍 Now listening on localhost:${PORT}!`);
-  });
-});
+startServer();
