@@ -13,7 +13,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0"
+  }
 }
