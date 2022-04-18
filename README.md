@@ -45,13 +45,13 @@ This app is open to contributions. Open up an Issue with suggested improvements 
 
 ## Testing
 
-To run tests, get the source code at git clone https://github.com/SnugglesMcGee/seek-and-read and install dependencies. Test with nodemon by typing: `npm run watch`.
+To run tests, get the source code at git clone [SnugglesMcGee/reead-and-seek](https://github.com/SnugglesMcGee/seek-and-read) and install dependencies. Test with nodemon by typing: `npm run watch`.
 
 ## Visuals
 
 ## GitHub Link
 
-[SnugglesMcGee](https://github.com/SnugglesMcGee)
+[GitHub: SnugglesMcGee](https://github.com/SnugglesMcGee)
 
 ## Deployment Link
 
