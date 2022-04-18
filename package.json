@@ -4,23 +4,18 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SnugglesMcGee/read-and-seek.git"
+  "start": "node server/server.js",
+  "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+  "install": "cd server && npm i && cd ../client && npm i",
+  "build": "cd client && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "cnb10100",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.3.0"
+  "concurrently": "^5.3.0"
   },
   "dependencies": {
-    "@apollo/react-hooks": "^4.0.0",
-    "apollo-server-express": "^3.6.7"
+  "@apollo/react-hooks": "^4.0.0"
   }
-}
+  }
