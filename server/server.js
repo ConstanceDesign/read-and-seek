@@ -16,13 +16,14 @@ const server = new ApolloServer({
 });
 
 const startServer = async () => {
+  await server.start();
+  server.applyMiddleware({ app });
+
   db.once("open", () => {
     app.listen(PORT, () => {
       console.log(`🌍 Now listening on localhost:${PORT}!`);
     });
   });
-  await server.start();
-  server.applyMiddleware({ app });
 };
 
 app.use(express.urlencoded({ extended: true }));
@@ -34,7 +35,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"));
+  res.sendFile(path.join(__dirname, "../client/"));
 });
 
 startServer();
