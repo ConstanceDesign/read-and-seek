@@ -26,12 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve up static assets
-if (process.env.NODE_ENV) {
-  //static folder add
-  app.use(express.static("app/client/build"));
-  app.get("*", function (req, res) {
-    res.sendFile(path.resolve(__dirname, "app/client/build", "index.html"));
-  });
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
 app.get("*", (req, res) => {
